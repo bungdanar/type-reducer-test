@@ -1,5 +1,10 @@
 import { createContext, Dispatch, FC, useReducer } from 'react'
-import { productReducer, shoppingCartReducer } from './reducer'
+import {
+  ProductActions,
+  productReducer,
+  ShoppingCartActions,
+  shoppingCartReducer,
+} from './reducer'
 
 type ProductType = {
   id: number
@@ -19,13 +24,16 @@ const initialState: InitialStateType = {
 
 const ProductContext = createContext<{
   state: InitialStateType
-  dispatch: Dispatch<any>
+  dispatch: Dispatch<ProductActions | ShoppingCartActions>
 }>({
   state: initialState,
   dispatch: () => null,
 })
 
-const mainReducer = ({ products, shoppingCart }: any, action: any) => ({
+const mainReducer = (
+  { products, shoppingCart }: InitialStateType,
+  action: ProductActions | ShoppingCartActions
+) => ({
   products: productReducer(products, action),
   shoppingCart: shoppingCartReducer(shoppingCart, action),
 })
