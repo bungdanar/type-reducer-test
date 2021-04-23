@@ -1,33 +1,37 @@
 import { FC, useContext } from 'react'
 import { ProductContext, ProductProvider } from './context'
+import List from './List'
 import { Types } from './reducer'
 
 const Products: FC = () => {
   const { state, dispatch } = useContext(ProductContext)
 
   return (
-    <div className="row justify-content-center">
-      <div className="col-sm-6">
-        <button
-          onClick={() =>
-            dispatch({
-              type: Types.Add,
-            })
-          }
-        >
-          click
-        </button>{' '}
-        {state.shoppingCart}
-      </div>
-    </div>
+    <>
+      <button
+        onClick={() =>
+          dispatch({
+            type: Types.Add,
+          })
+        }
+      >
+        click
+      </button>{' '}
+      {state.shoppingCart}
+    </>
   )
 }
 
 const ProductsPage: FC = () => {
   return (
-    <ProductProvider>
-      <Products />
-    </ProductProvider>
+    <div className="row justify-content-center">
+      <div className="col-sm-6">
+        <ProductProvider>
+          <Products />
+          <List />
+        </ProductProvider>
+      </div>
+    </div>
   )
 }
 
