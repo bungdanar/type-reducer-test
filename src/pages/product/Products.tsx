@@ -6,17 +6,19 @@ const Products: FC = () => {
   const { state, dispatch } = useContext(ProductContext)
 
   return (
-    <div>
-      <button
-        onClick={() =>
-          dispatch({
-            type: Types.Add,
-          })
-        }
-      >
-        click
-      </button>
-      {state.shoppingCart}
+    <div className="row justify-content-center">
+      <div className="col-sm-6">
+        <button
+          onClick={() =>
+            dispatch({
+              type: Types.Add,
+            })
+          }
+        >
+          click
+        </button>{' '}
+        {state.shoppingCart}
+      </div>
     </div>
   )
 }
