@@ -1,0 +1,53 @@
+.custom-input small {
+  color: red;
+}
+
+.custom-input--not-valid .form-control {
+  border: 1px solid red;
+}
+
+/* .custom-input .form-control:focus {
+    box-shadow: none;
+    border-color: #16a085;
+  } */
+
+.custom-input--not-valid .form-control:focus {
+  border-color: red;
+}
+
+.custom-input .MuiOutlinedInput-input {
+  padding: 0.75rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #495057;
+}
+
+/* .custom-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #16a085;
+  } */
+
+.custom-input--mui-not-valid
+  .MuiFormControl-root
+  .MuiOutlinedInput-notchedOutline {
+  border-color: red;
+}
+
+.custom-input--mui-not-valid
+  .MuiOutlinedInput-root:hover
+  .MuiOutlinedInput-notchedOutline {
+  border-color: red;
+}
+
+.custom-input--mui-not-valid
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: red;
+}
+
+.custom-input--select-not-valid .css-e56m7-control {
+  border-color: red;
+}
+
+.custom-input--select-not-valid .css-e56m7-control:hover {
+  border-color: red;
+}
