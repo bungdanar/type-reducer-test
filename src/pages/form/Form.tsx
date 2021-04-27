@@ -16,10 +16,30 @@ export default function FormPage() {
   const [formState, formDispatch] = useReducer(formReducer, initialFormState)
   const [isFormTouched, setFormTouched] = useState(false)
 
+  const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault()
+
+    if (!isFormTouched) {
+      setFormTouched(true)
+    }
+
+    let isFormValid = true
+    Object.values(formState).forEach((val) => {
+      isFormValid = isFormValid && val.isValid
+    })
+
+    if (!isFormValid) {
+      alert('Form is not valid')
+      return
+    } else {
+      alert('Form is valid,yay')
+    }
+  }
+
   return (
     <div className="row justify-content-center">
       <div className="col-sm-6">
-        <form>
+        <form onSubmit={handleSubmitForm}>
           <TextInput
             label="Text Input"
             type="text"
