@@ -1,3 +1,4 @@
+import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date'
 import { SelectValue } from '../../components/Inputs/input-type'
 import { FormActions, FormActionTypes } from './form-action'
 
@@ -17,8 +18,8 @@ type InitialFormState = {
   password: FormInputValue<string>
   textarea: FormInputValue<string>
   select: FormInputValue<SelectValue | null>
-  date: FormInputValue<object | null>
-  time: FormInputValue<object | null>
+  date: FormInputValue<MaterialUiPickersDate>
+  time: FormInputValue<MaterialUiPickersDate>
   radio: FormInputValue<string>
   reactCheck: FormInputValue<boolean>
   pythonCheck: FormInputValue<boolean>
@@ -138,4 +139,4 @@ const formReducer = (
   }
 }
 
-export { initialFormState, formReducer }
+export { initialFormState, formReducer, radioOptions }

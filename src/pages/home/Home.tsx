@@ -8,6 +8,9 @@ export default function Home() {
           <li>
             <Link to="/product">product</Link>
           </li>
+          <li>
+            <Link to="/form">form</Link>
+          </li>
         </ul>
       </div>
     </div>

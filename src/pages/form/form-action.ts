@@ -1,3 +1,4 @@
+import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date'
 import { SelectValue } from '../../components/Inputs/input-type'
 
 type ActionMap<M extends { [index: string]: any }> = {
@@ -26,8 +27,8 @@ type FormPayloads = {
   [FormActionTypes.PasswordChange]: string
   [FormActionTypes.TextareaChange]: string
   [FormActionTypes.SelectChange]: SelectValue | null
-  [FormActionTypes.DateChange]: object | null
-  [FormActionTypes.TimeChange]: object | null
+  [FormActionTypes.DateChange]: MaterialUiPickersDate
+  [FormActionTypes.TimeChange]: MaterialUiPickersDate
   [FormActionTypes.RadioChange]: string
   [FormActionTypes.ReactCheckChange]: boolean
   [FormActionTypes.PythonCheckChange]: boolean
