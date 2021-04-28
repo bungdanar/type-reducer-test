@@ -11,6 +11,7 @@ import Home from './pages/home/Home'
 import FormPage from './pages/form/Form'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import RencanaPage from './pages/rencana/Rencana'
 
 function App() {
   const defaulMaterialTheme = unstable_createMuiStrictModeTheme({
@@ -30,6 +31,7 @@ function App() {
               <Route path="/" exact render={() => <Home />} />
               <Route path="/product" exact render={() => <ProductsPage />} />
               <Route path="/form" exact render={() => <FormPage />} />
+              <Route path="/rencana" exact render={() => <RencanaPage />} />
             </Switch>
           </HashRouter>
         </div>

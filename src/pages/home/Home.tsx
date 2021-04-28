@@ -11,6 +11,9 @@ export default function Home() {
           <li>
             <Link to="/form">form</Link>
           </li>
+          <li>
+            <Link to="/rencana">rencana</Link>
+          </li>
         </ul>
       </div>
     </div>
